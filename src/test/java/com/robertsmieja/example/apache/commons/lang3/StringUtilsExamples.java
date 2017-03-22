@@ -16,6 +16,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * This class contains example usages of StringUtils
+ * Many of these methods are null-safe
  */
 public class StringUtilsExamples {
 
@@ -42,6 +43,7 @@ public class StringUtilsExamples {
         assertFunction(StringUtils::capitalize, "foo", "Foo");
         assertFunction(StringUtils::capitalize, "foo bar", "Foo bar");
         assertFunction(StringUtils::capitalize, "1234", "1234");
+        assertFunction(StringUtils::capitalize, null, null);
     }
 
     @Test
@@ -51,12 +53,14 @@ public class StringUtilsExamples {
         assertFunction(StringUtils::uncapitalize, "Foo", "foo");
         assertFunction(StringUtils::uncapitalize, "Foo bar", "foo bar");
         assertFunction(StringUtils::uncapitalize, "1234", "1234");
+        assertFunction(StringUtils::uncapitalize, null, null);
     }
 
     @Test
     public void splitExamples(){
         assertFunction(StringUtils::split, "Here are a bunch of words.", new String[]{"Here", "are", "a", "bunch", "of", "words."});
         assertFunction(StringUtils::split, "C, S, V, example",",", new String[]{"C", " S", " V", " example"});
+        assertFunction(StringUtils::split, (String)null, null);
     }
 
     @Test
@@ -64,6 +68,7 @@ public class StringUtilsExamples {
         assertFunction(StringUtils::difference, "Similar string", "Similar string kindof", " kindof");
         assertFunction(StringUtils::difference, "same string", "same string", "");
         assertFunction(StringUtils::difference, "different string", "foo bar", "foo bar");
+        assertFunction(StringUtils::difference, null, null, null);
     }
 
 
