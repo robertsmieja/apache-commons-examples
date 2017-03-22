@@ -1,4 +1,4 @@
-package com.robertsmieja.demo.apache.commons.lang3;
+package com.robertsmieja.example.apache.commons.lang3;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
