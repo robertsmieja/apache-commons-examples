@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.*;
 
 /**
- * This class contains example usages of StringUtils
+ * This class contains example usages of Pairs and Tuples
  */
 public class PairAndTupleExamples {
     MutablePair<Integer, String> mutablePair;
