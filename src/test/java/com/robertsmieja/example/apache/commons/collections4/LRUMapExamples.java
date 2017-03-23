@@ -6,9 +6,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Examples demonstrating the LRUMap
- */
 public class LRUMapExamples {
     LRUMap<Integer, String> lruMap;
 

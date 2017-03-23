@@ -11,9 +11,6 @@ import java.util.Collection;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.*;
 
-/**
- * Example of multi-value map
- */
 public class MultiValuedMapExamples {
     MultiValuedMap<Integer, String> multiMap;
 

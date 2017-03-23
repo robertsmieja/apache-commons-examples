@@ -11,8 +11,6 @@ import java.util.Set;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Examples relating to HashedMap and MapIterator, mostly focusing on MapIterator
- * <p>
  * The benefit of using HashedMap instead of the default HashMap is access to the mapIterator()
  * <p>
  * The main benefits to using MapIterator are performance, ease-of-use when doing value changes.

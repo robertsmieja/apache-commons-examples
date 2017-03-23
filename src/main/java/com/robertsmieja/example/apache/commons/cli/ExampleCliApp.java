@@ -31,7 +31,7 @@ public class ExampleCliApp {
             System.out.println(echoArg);
         }
 
-        if (parsedOptions.hasOption(ADD_OPTION_ARG_LONG_ARG)){
+        if (parsedOptions.hasOption(ADD_OPTION_ARG_LONG_ARG)) {
             String[] addArgs = parsedOptions.getOptionValues(ADD_OPTION_ARG_LONG_ARG);
             Integer firstArg = Integer.valueOf(addArgs[0]);
             Integer secondArg = Integer.valueOf(addArgs[1]);

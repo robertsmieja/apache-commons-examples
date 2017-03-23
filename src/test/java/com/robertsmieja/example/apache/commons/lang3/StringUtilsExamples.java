@@ -10,9 +10,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 /**
- * This class contains example usages of StringUtils
- * <p>
- * All of these methods are null-safe
+ * All of these methods used here are null-safe
  */
 public class StringUtilsExamples {
 

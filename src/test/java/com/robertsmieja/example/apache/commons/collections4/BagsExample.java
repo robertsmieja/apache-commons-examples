@@ -8,8 +8,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Example of Bags interface
- * <p>
  * NOTE: This violates the Collections interface contracts for almost every operation
  */
 public class BagsExample {

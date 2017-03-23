@@ -10,20 +10,6 @@ import static org.junit.Assert.*;
 
 public class MethodUtilsExamples {
 
-    public static class ClassWithMethods {
-        private void privatePrint() {
-            System.out.println("privatePrint() called!");
-        }
-
-        public void publicPrint() {
-            System.out.println("publicPrint() called!");
-        }
-
-        public int add(int x, int y) {
-            return x + y;
-        }
-    }
-
     @Test
     public void wrapAndUnwrapPrimitives() {
         assertEquals(int.class, MethodUtils.getPrimitiveType(Integer.class));
@@ -78,5 +64,19 @@ public class MethodUtilsExamples {
         int sum = (int) MethodUtils.invokeExactMethod(object, "add", new Object[]{1, 2}, new Class[]{int.class, int.class});
 
         assertEquals(3, sum);
+    }
+
+    public static class ClassWithMethods {
+        private void privatePrint() {
+            System.out.println("privatePrint() called!");
+        }
+
+        public void publicPrint() {
+            System.out.println("publicPrint() called!");
+        }
+
+        public int add(int x, int y) {
+            return x + y;
+        }
     }
 }

@@ -17,13 +17,13 @@ dependencies {
 
     testCompile 'org.mockito:mockito-core:2.7.19'
     testCompile 'org.hamcrest:java-hamcrest:2.0.0.0'
-    testCompile('junit:junit:4.12'){
+    testCompile('junit:junit:4.12') {
         exclude group: 'org.hamcrest', module: 'hamcrest-core' //renamed to java-hamcrest
     }
 }
 
 jar {
-    manifest{
-        attributes "Main-Class" : "$mainClassName"
+    manifest {
+        attributes "Main-Class": "$mainClassName"
     }
 }

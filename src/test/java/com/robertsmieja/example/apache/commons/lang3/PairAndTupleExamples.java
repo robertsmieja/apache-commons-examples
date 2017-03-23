@@ -13,13 +13,9 @@ import java.util.List;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.*;
 
-/**
- * This class contains example usages of Pairs and Tuples
- */
 public class PairAndTupleExamples {
     MutablePair<Integer, String> mutablePair;
     Pair<Integer, List<String>> immutablePair;
-
 
     @Before
     public void setup() {
