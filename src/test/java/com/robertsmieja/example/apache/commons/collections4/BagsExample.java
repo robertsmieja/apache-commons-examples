@@ -35,7 +35,7 @@ public class BagsExample {
     }
 
     @Test
-    public void addingMultipleCopies(){
+    public void addingMultipleCopies() {
         assertEquals(0, integerBag.size());
         assertEquals(0, integerBag.getCount(1));
 
@@ -49,7 +49,7 @@ public class BagsExample {
     }
 
     @Test
-    public void simpleRemove(){
+    public void simpleRemove() {
         assertEquals(0, integerBag.size());
         assertEquals(0, integerBag.getCount(1));
 
@@ -63,7 +63,7 @@ public class BagsExample {
     }
 
     @Test
-    public void removingACertainNumberOfCopies(){
+    public void removingACertainNumberOfCopies() {
         assertEquals(0, integerBag.size());
         assertEquals(0, integerBag.getCount(1));
 

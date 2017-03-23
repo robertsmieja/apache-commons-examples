@@ -10,13 +10,6 @@ import static org.junit.Assert.assertNotNull;
 
 public class ConstructorUtilsExamples {
 
-    public static class CoolClassWithConstructors {
-        public CoolClassWithConstructors(){}
-        public CoolClassWithConstructors(String stringArg){}
-        public CoolClassWithConstructors(int intArg) {}
-    }
-
-
     @Test
     public void constructorUtilsExample() throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException {
         Constructor<CoolClassWithConstructors> emptyCosntructor = ConstructorUtils.getAccessibleConstructor(CoolClassWithConstructors.class);
@@ -37,5 +30,16 @@ public class ConstructorUtilsExamples {
         assertNotNull(emptyConstructorInstance);
         assertNotNull(stringConstructorInstance);
         assertNotNull(intConstructorInstance);
+    }
+
+    public static class CoolClassWithConstructors {
+        public CoolClassWithConstructors() {
+        }
+
+        public CoolClassWithConstructors(String stringArg) {
+        }
+
+        public CoolClassWithConstructors(int intArg) {
+        }
     }
 }

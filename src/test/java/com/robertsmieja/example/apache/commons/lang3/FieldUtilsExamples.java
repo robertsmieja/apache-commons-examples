@@ -1,7 +1,6 @@
 package com.robertsmieja.example.apache.commons.lang3;
 
 import org.apache.commons.lang3.reflect.FieldUtils;
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -13,38 +12,6 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.*;
 
 public class FieldUtilsExamples {
-
-    public static class ClassWithFields {
-        public String publicString = "foo";
-        private Boolean encapsulatedField = true;
-        private long secretField = 1_234L;
-
-        @CoolAnnotation
-        private String annotatedField = "bar";
-
-        public ClassWithFields() {
-        }
-
-        public ClassWithFields(long secretField) {
-            this.secretField = secretField;
-        }
-
-        public Boolean getEncapsulatedField() {
-            return encapsulatedField;
-        }
-
-        public void setEncapsulatedField(Boolean encapsulatedField) {
-            this.encapsulatedField = encapsulatedField;
-        }
-
-        public String getAnnotatedField() {
-            return annotatedField;
-        }
-
-        public void setAnnotatedField(String annotatedField) {
-            this.annotatedField = annotatedField;
-        }
-    }
 
     @Test
     public void getAllAnnotatedFields() {
@@ -60,7 +27,7 @@ public class FieldUtilsExamples {
     }
 
     @Test
-    public void getAllFields(){
+    public void getAllFields() {
         Field[] allFields = FieldUtils.getAllFields(ClassWithFields.class);
         List<String> allFieldNames = Arrays.stream(allFields).map(Field::getName).collect(Collectors.toList());
 
@@ -102,5 +69,37 @@ public class FieldUtilsExamples {
         FieldUtils.writeField(secretField, object, 1L);
         assertEquals(1L, FieldUtils.readField(secretField, object, true));
 
+    }
+
+    public static class ClassWithFields {
+        public String publicString = "foo";
+        private Boolean encapsulatedField = true;
+        private long secretField = 1_234L;
+
+        @CoolAnnotation
+        private String annotatedField = "bar";
+
+        public ClassWithFields() {
+        }
+
+        public ClassWithFields(long secretField) {
+            this.secretField = secretField;
+        }
+
+        public Boolean getEncapsulatedField() {
+            return encapsulatedField;
+        }
+
+        public void setEncapsulatedField(Boolean encapsulatedField) {
+            this.encapsulatedField = encapsulatedField;
+        }
+
+        public String getAnnotatedField() {
+            return annotatedField;
+        }
+
+        public void setAnnotatedField(String annotatedField) {
+            this.annotatedField = annotatedField;
+        }
     }
 }

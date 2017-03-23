@@ -4,9 +4,7 @@ import org.apache.commons.collections4.map.LRUMap;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * Examples demonstrating the LRUMap
@@ -15,18 +13,18 @@ public class LRUMapExamples {
     LRUMap<Integer, String> lruMap;
 
     @Before
-    public void setup(){
+    public void setup() {
         lruMap = new LRUMap<>(2);
     }
 
     @Test
-    public void maxSize(){
+    public void maxSize() {
         assertEquals(lruMap.size(), 0);
         assertEquals(lruMap.maxSize(), 2);
     }
 
     @Test
-    public void anythingUnderTheMaxSizeStaysInTheMap(){
+    public void anythingUnderTheMaxSizeStaysInTheMap() {
         lruMap.put(1, "foo");
         lruMap.put(2, "bar");
 
@@ -35,7 +33,7 @@ public class LRUMapExamples {
     }
 
     @Test
-    public void goingOverTheMaxKicksOutTheOldestEntry(){
+    public void goingOverTheMaxKicksOutTheOldestEntry() {
         lruMap.put(1, "foo");
         lruMap.put(2, "bar");
 
@@ -54,7 +52,7 @@ public class LRUMapExamples {
     }
 
     @Test
-    public void goingOverTheMaxKicksOutTheOldestEntry_exceptThisTimeWithTheSecondEntry(){
+    public void goingOverTheMaxKicksOutTheOldestEntry_exceptThisTimeWithTheSecondEntry() {
         lruMap.put(1, "foo");
         lruMap.put(2, "bar");
 
@@ -73,7 +71,7 @@ public class LRUMapExamples {
     }
 
     @Test
-    public void passingInFalseDoesntUpdateTheInternalMru(){
+    public void passingInFalseDoesntUpdateTheInternalMru() {
         lruMap.put(1, "foo");
         lruMap.put(2, "bar");
 

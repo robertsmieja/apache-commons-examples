@@ -8,14 +8,10 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 /**
- * A small set of OrderedMap examples
- * <p>
  * The main benefit is that interface guarantees the implementation cares about the order.
  * <p>
  * We could use a TreeMap, but then if we ever cast down to just the Map interface,

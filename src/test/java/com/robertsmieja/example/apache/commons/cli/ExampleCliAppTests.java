@@ -10,26 +10,24 @@ import org.junit.Test;
 
 import java.io.PrintStream;
 
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class ExampleCliAppTests {
-    ExampleCliApp objectUnderTest;
-
     static PrintStream systemOut;
+    ExampleCliApp objectUnderTest;
     PrintStream mockSystemOut;
 
     HelpFormatter helpFormatter;
     Options options;
 
     @BeforeClass
-    public static void backupSystemOut(){
+    public static void backupSystemOut() {
         systemOut = System.out;
     }
 
     @Before
-    public void setup(){
+    public void setup() {
         objectUnderTest = new ExampleCliApp();
 
         helpFormatter = mock(HelpFormatter.class);
@@ -43,7 +41,7 @@ public class ExampleCliAppTests {
     }
 
     @After
-    public void restoreSystemOut(){
+    public void restoreSystemOut() {
         System.setOut(systemOut);
     }
 

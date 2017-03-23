@@ -51,7 +51,7 @@ public class MultiValuedMapExamples {
     }
 
     @Test
-    public void addingAListWithAnAdd(){
+    public void addingAListWithAnAdd() {
         multiMap.putAll(1, Arrays.asList("foo", "bar"));
         assertEquals(2, multiMap.size());
 

@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * This class contains example usages of StringUtils
- *
+ * <p>
  * All of these methods are null-safe
  */
 public class StringUtilsExamples {
