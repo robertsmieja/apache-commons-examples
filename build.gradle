@@ -1,3 +1,4 @@
+apply plugin: 'application'
 apply plugin: 'eclipse'
 apply plugin: 'java'
 
@@ -5,6 +6,8 @@ repositories {
     jcenter()
     mavenCentral()
 }
+
+mainClassName = 'com.robertsmieja.example.apache.commons.cli.ExampleCliApp'
 
 dependencies {
     compile 'commons-beanutils:commons-beanutils:1.9.3'
