@@ -12,65 +12,65 @@ import static org.junit.Assert.assertEquals;
  */
 public class BagsExample {
 
-    Bag<String> integerBag;
+    Bag<String> bag;
 
     @Before
     public void setup() {
-        integerBag = new HashBag<>();
+        bag = new HashBag<>();
     }
 
     @Test
     public void simpleAdd() {
-        assertEquals(0, integerBag.size());
+        assertEquals(0, bag.size());
 
-        integerBag.add("foo");
-        assertEquals(1, integerBag.getCount("foo"));
-        assertEquals(1, integerBag.size());
+        bag.add("foo");
+        assertEquals(1, bag.getCount("foo"));
+        assertEquals(1, bag.size());
 
-        integerBag.add("foo");
-        assertEquals(2, integerBag.getCount("foo"));
-        assertEquals(2, integerBag.size());
+        bag.add("foo");
+        assertEquals(2, bag.getCount("foo"));
+        assertEquals(2, bag.size());
     }
 
     @Test
     public void addingMultipleCopies() {
-        assertEquals(0, integerBag.size());
-        assertEquals(0, integerBag.getCount("foo"));
+        assertEquals(0, bag.size());
+        assertEquals(0, bag.getCount("foo"));
 
-        integerBag.add("foo", 10);
-        assertEquals(10, integerBag.size());
-        assertEquals(10, integerBag.getCount("foo"));
+        bag.add("foo", 10);
+        assertEquals(10, bag.size());
+        assertEquals(10, bag.getCount("foo"));
 
-        integerBag.add("bar");
-        assertEquals(11, integerBag.size());
-        assertEquals(1, integerBag.getCount("bar"));
+        bag.add("bar");
+        assertEquals(11, bag.size());
+        assertEquals(1, bag.getCount("bar"));
     }
 
     @Test
     public void simpleRemove() {
-        assertEquals(0, integerBag.size());
-        assertEquals(0, integerBag.getCount("foo"));
+        assertEquals(0, bag.size());
+        assertEquals(0, bag.getCount("foo"));
 
-        integerBag.add("foo", 10);
-        assertEquals(10, integerBag.size());
-        assertEquals(10, integerBag.getCount("foo"));
+        bag.add("foo", 10);
+        assertEquals(10, bag.size());
+        assertEquals(10, bag.getCount("foo"));
 
-        integerBag.remove("foo");
-        assertEquals(0, integerBag.getCount("foo"));
-        assertEquals(0, integerBag.size());
+        bag.remove("foo");
+        assertEquals(0, bag.getCount("foo"));
+        assertEquals(0, bag.size());
     }
 
     @Test
     public void removingACertainNumberOfCopies() {
-        assertEquals(0, integerBag.size());
-        assertEquals(0, integerBag.getCount("foo"));
+        assertEquals(0, bag.size());
+        assertEquals(0, bag.getCount("foo"));
 
-        integerBag.add("foo", 10);
-        assertEquals(10, integerBag.size());
-        assertEquals(10, integerBag.getCount("foo"));
+        bag.add("foo", 10);
+        assertEquals(10, bag.size());
+        assertEquals(10, bag.getCount("foo"));
 
-        integerBag.remove("foo", 3);
-        assertEquals(7, integerBag.getCount("foo"));
-        assertEquals(7, integerBag.size());
+        bag.remove("foo", 3);
+        assertEquals(7, bag.getCount("foo"));
+        assertEquals(7, bag.size());
     }
 }
