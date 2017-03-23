@@ -1,27 +1,23 @@
 package com.robertsmieja.example.apache.commons.lang3;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 /**
  * This class contains example usages of StringUtils
- * Many of these methods are null-safe
+ *
+ * All of these methods are null-safe
  */
 public class StringUtilsExamples {
 
     @Test
-    public void isBlankExamples(){
+    public void isBlankExamples() {
         assertFunction(StringUtils::isBlank, "", true);
         assertFunction(StringUtils::isBlank, null, true);
         assertFunction(StringUtils::isBlank, " ", true);
@@ -29,7 +25,7 @@ public class StringUtilsExamples {
     }
 
     @Test
-    public void isEmptyExamples(){
+    public void isEmptyExamples() {
         assertFunction(StringUtils::isEmpty, "", true);
         assertFunction(StringUtils::isEmpty, null, true);
         assertFunction(StringUtils::isEmpty, " ", false);
@@ -57,14 +53,16 @@ public class StringUtilsExamples {
     }
 
     @Test
-    public void splitExamples(){
+    public void splitExamples() {
         assertFunction(StringUtils::split, "Here are a bunch of words.", new String[]{"Here", "are", "a", "bunch", "of", "words."});
-        assertFunction(StringUtils::split, "C, S, V, example",",", new String[]{"C", " S", " V", " example"});
-        assertFunction(StringUtils::split, (String)null, null);
+        assertFunction(StringUtils::split, "C, S, V, example", ",", new String[]{"C", " S", " V", " example"});
+
+        //Expanded lambda expression is needed because the arguments (null, null) match multiple method signatures
+        assertFunction((String str, String seperatorChar) -> StringUtils.split(str, seperatorChar), null, null, null);
     }
 
     @Test
-    public void differenceExamples(){
+    public void differenceExamples() {
         assertFunction(StringUtils::difference, "Similar string", "Similar string kindof", " kindof");
         assertFunction(StringUtils::difference, "same string", "same string", "");
         assertFunction(StringUtils::difference, "different string", "foo bar", "foo bar");
@@ -72,27 +70,20 @@ public class StringUtilsExamples {
     }
 
 
-
-
-
-
-
-
-
-
     /* Helpers */
-    private <T, R> void assertFunction(Function<T, R> function, T input, R output){
-        if (output instanceof Object[]){
-            assertArrayEquals((R[])output, (R[]) function.apply(input));
-        } else {
-            assertEquals(output, function.apply(input));
-        }
+    private <T, R> void assertFunction(Function<T, R> function, T input, R output) {
+        assertEquals(output, function.apply(input));
     }
-    private <T, O, R> void assertFunction(BiFunction<T, O, R> function, T input, O otherInput, R output){
-        if (output instanceof Object[]){
-            assertArrayEquals((R[])output, (R[]) function.apply(input, otherInput));
-        } else {
-            assertEquals(output, function.apply(input,otherInput));
-        }
+
+    private <T, R> void assertFunction(Function<T, R[]> function, T input, R[] output) {
+        assertArrayEquals(output, function.apply(input));
+    }
+
+    private <T, O, R> void assertFunction(BiFunction<T, O, R> function, T input, O otherInput, R output) {
+        assertEquals(output, function.apply(input, otherInput));
+    }
+
+    private <T, O, R> void assertFunction(BiFunction<T, O, R[]> function, T input, O otherInput, R[] output) {
+        assertArrayEquals(output, function.apply(input, otherInput));
     }
 }
